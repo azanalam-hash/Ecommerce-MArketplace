@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ecommerce Hero</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- TOP ANNOUNCEMENT BAR -->
+<div class="top-bar">
+  BUY ANY TWO PERFUMES AND GET FREE SHIPPING.
+</div>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-left">
+    🔍
+  </div>
+
+  <div class="logo">
+    Elyscents
+  </div>
+
+  <div class="header-right">
+    👤 👜
+  </div>
+</header>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <a href="#">HOME</a>
+  <a href="#">ALL PERFUMES</a>
+  <a href="#">CRAZY DEALS</a>
+  <a href="#">NEW YEAR SPECIAL</a>
+  <a href="#">ABOUT US</a>
+  <a href="#">CONTACT US</a>
+</nav>
+
+<!-- HERO SECTION -->
+
+  
+
+<section class="hero-slider">
+  <img src="https://elyscents.pk/cdn/shop/files/zarak_Banner.jpg?v=1760593493&width=1920" class="slide active">
+  <img src="https://elyscents.pk/cdn/shop/files/royal_oud_Banner.jpg?v=1760593492&width=1920" class="slide">
+  <img src="https://elyscents.pk/cdn/shop/files/Salsa_spirit_Banner.jpg?v=1760593491&width=1920" class="slide">
+</section>
+
+    
+  </div>
+</section>
+<script>
+  const slides = document.querySelectorAll(".slide");
+  let currentIndex = 0;
+
+  setInterval(() => {
+    slides[currentIndex].classList.remove("active");
+
+    currentIndex = (currentIndex + 1) % slides.length;
+
+    slides[currentIndex].classList.add("active");
+  }, 5000);
+</script>
+<section class="crazy-deals">
+  <h2>CRAZY DEALS</h2>
+
+  <div class="products-grid">
+
+    <!-- PRODUCT 1 -->
+    <div class="product-card" onclick="openPopup('popup-detailed-1')">
+      <div class="product-image">
+        <img src="https://elyscents.pk/cdn/shop/files/4_perfume_new_1.jpg?v=1764960763&width=540" class="img-main">
+        <img src="https://elyscents.pk/cdn/shop/files/4_perfume_new_1.jpg?v=1764960763&width=540" class="img-hover">
+        <span class="sale-badge">Sale</span>
+      </div>
+
+      <h3>4X PERFUME BUNDLE</h3>
+
+      <p class="price">
+        <del>Rs.7,596</del>
+        <span>Rs.5,599</span>
+      </p>
+
+      <button class="add-cart-btn"
+onclick="addToCart('4X Perfume Bundle', 'Rs. 5,599')">
+Add to Cart
+</button>
+
+    </div>
+
+    <!-- PRODUCT 2 -->
+    <div class="product-card" onclick="openPopup('popup-detailed-2')">
+      <div class="product-image">
+        <img src="https://elyscents.pk/cdn/shop/files/3_perfume_Deal.jpg?v=1760181185&width=1080" class="img-main">
+        <img src="https://elyscents.pk/cdn/shop/files/3perfume.jpg?v=1760181185&width=540" class="img-hover">
+        <span class="sale-badge">Sale</span>
+      </div>
+
+      <h3>3X PERFUME BUNDLE</h3>
+
+      <p class="price">
+        <del>Rs.5,700</del>
+        <span>Rs.4,444</span>
+      </p>
+
+      <button>Add to Cart</button>
+    </div>
+
+    <!-- PRODUCT 3 -->
+    <div class="product-card" onclick="openPopup('popup-simple')">
+      <div class="product-image">
+        <img src="https://elyscents.pk/cdn/shop/files/perfect_Duo_2.0.jpg?v=1760428407&width=540" class="img-main">
+        <img src="https://elyscents.pk/cdn/shop/files/perfect_Duo_2.0.jpg?v=1760428407&width=540" class="img-hover">
+        <span class="sale-badge">Sale</span>
+      </div>
+
+      <h3>THE PERFECT DUO</h3>
+      <p class="price"><span>Rs.2,999</span></p>
+      <button>Add to Cart</button>
+    </div>
+
+    <!-- PRODUCT 4 -->
+    <div class="product-card" onclick="openPopup('popup-simple')">
+      <div class="product-image">
+        <img src="https://elyscents.pk/cdn/shop/files/SKU.jpg?v=1764765674&width=540" class="img-main">
+        <img src="https://elyscents.pk/cdn/shop/files/SKU.jpg?v=1764765674&width=540" class="img-hover">
+        <span class="sale-badge">Sale</span>
+      </div>
+
+      <h3>6X MEGA DEAL</h3>
+      <p class="price"><span>Rs.8,399</span></p>
+      <button>Add to Cart</button>
+    </div>
+
+    <!-- PRODUCT 5 -->
+    <div class="product-card" onclick="openPopup('popup-simple')">
+      <div class="product-image">
+        <img src="https://elyscents.pk/cdn/shop/files/ouddeal_1.jpg?v=1766596989&width=540" class="img-main">
+        <img src="https://elyscents.pk/cdn/shop/files/ouddeal_1.jpg?v=1766596989&width=540" class="img-hover">
+        <span class="sale-badge">Sale</span>
+      </div>
+
+      <h3>OUD DUO COMBO</h3>
+      <p class="price"><span>Rs.3,199</span></p>
+      <button>Add to Cart</button>
+    </div>
+
+    <!-- PRODUCT 6 -->
+    <div class="product-card" onclick="openPopup('popup-simple')">
+      <div class="product-image">
+        <img src="https://elyscents.pk/cdn/shop/files/image_5.png?v=1763039447&width=540" class="img-main">
+        <img src="https://elyscents.pk/cdn/shop/files/image_5.png?v=1763039447&width=540" class="img-hover">
+        <span class="sale-badge">Sale</span>
+      </div>
+
+      <h3>TOP 3 BEST SELLERS</h3>
+      <p class="price"><span>Rs.4,400</span></p>
+      <button>Add to Cart</button>
+    </div>
+
+    <!-- PRODUCT 7 -->
+    <div class="product-card" onclick="openPopup('popup-simple')">
+      <div class="product-image">
+        <img src="https://elyscents.pk/cdn/shop/files/officedeal.jpg?v=1765439449&width=540" class="img-main">
+        <img src="https://elyscents.pk/cdn/shop/files/officedeal.jpg?v=1765439449&width=540" class="img-hover">
+        <span class="sale-badge">Sale</span>
+      </div>
+
+      <h3>OFFICE DEAL</h3>
+      <p class="price"><span>Rs.4,400</span></p>
+      <button>Add to Cart</button>
+    </div>
+
+    <!-- PRODUCT 8 -->
+    <div class="product-card" onclick="openPopup('popup-simple')">
+      <div class="product-image">
+        <img src="https://elyscents.pk/cdn/shop/files/testerbox1.jpg?v=1760517576&width=1080" class="img-main">
+        <img src="https://elyscents.pk/cdn/shop/files/testerbox2.jpg?v=1760517577&width=540" class="img-hover">
+        <span class="sale-badge">Sale</span>
+      </div>
+
+      <h3>TESTER BOX</h3>
+      <p class="price"><span>Rs.890</span></p>
+      <button>Add to Cart</button>
+    </div>
+
+  </div>
+</section>
+<div class="popup-overlay" id="popupOverlay">
+
+  <div class="popup-box">
+    <span class="close-btn" onclick="closePopup()">✖</span>
+
+    <!-- DETAILED PRODUCT 1 -->
+    <div class="popup-content" id="popup-detailed-1">
+      <div class="detailed-layout">
+        <div class="popup-left">
+          <img src="p1-big.jpg">
+        </div>
+
+        <div class="popup-right">
+          <h2>4X PERFUME BUNDLE</h2>
+          ⭐⭐⭐⭐⭐ <small>24 reviews</small>
+
+          <p class="price">
+            <del>Rs.7,596</del> Rs.5,599
+            <span class="save">Save Rs.1,997</span>
+          </p>
+
+          <div class="offer-box">
+            🎁 Buy Any 2 Perfumes & Get FREE Delivery
+          </div>
+
+          <ul class="features">
+            <li>FREE gift packing</li>
+            <li>14 Days easy return</li>
+            <li class="stock">In stock, ready to ship</li>
+          </ul>
+
+          <label>PERFUME 1</label>
+          <select><option>Apex Inspired By Dunhill</option></select>
+
+          <label>PERFUME 2</label>
+          <select><option>Apex Inspired By Dunhill</option></select>
+
+          <label>PERFUME 3</label>
+          <select><option>Apex Inspired By Dunhill</option></select>
+
+          <label>PERFUME 4</label>
+          <select><option>Adventure Inspired by Versace</option></select>
+
+          <button class="btn-outline">ADD TO CART</button>
+          <button class="btn-primary">BUY IT NOW</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- DETAILED PRODUCT 2 -->
+    <div class="popup-content" id="popup-detailed-2">
+      <div class="detailed-layout">
+        <div class="popup-left">
+          <img src="p2-big.jpg">
+        </div>
+
+        <div class="popup-right">
+          <h2>3X PERFUME BUNDLE</h2>
+          ⭐⭐⭐⭐ <small>18 reviews</small>
+
+          <p class="price">
+            <del>Rs.5,700</del> Rs.4,444
+          </p>
+
+          <ul class="features">
+            <li>Premium gift box</li>
+            <li>Easy returns</li>
+            <li class="stock">Limited stock</li>
+          </ul>
+
+          <select><option>Select Perfume 1</option></select>
+          <select><option>Select Perfume 2</option></select>
+          <select><option>Select Perfume 3</option></select>
+
+          <button class="btn-primary">ADD TO CART</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- SIMPLE POPUP (FOR OTHER PRODUCTS) -->
+    <div class="popup-content" id="popup-simple">
+      <div class="simple-layout">
+        <img src="default-product.jpg">
+        <h2>Product Added</h2>
+        <p>This product is available in limited stock.</p>
+        <button class="btn-primary">ADD TO CART</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<script>
+function openPopup(id) {
+  document.getElementById("popupOverlay").style.display = "flex";
+
+  document.querySelectorAll(".popup-content").forEach(popup => {
+    popup.style.display = "none";
+  });
+
+  document.getElementById(id).style.display = "block";
+}
+
+function closePopup() {
+  document.getElementById("popupOverlay").style.display = "none";
+}
+</script>
+<!-- SIDE CART -->
+<div class="side-cart" id="sideCart">
+  <div class="side-cart-header">
+    <h3>Your Cart</h3>
+    <span class="close-cart" onclick="closeCart()">×</span>
+  </div>
+
+  <div class="side-cart-body" id="cartItems">
+    <p class="empty">Your cart is empty</p>
+  </div>
+
+  <div class="side-cart-footer">
+    <button class="checkout-btn">Checkout</button>
+  </div>
+</div>
+<script>
+  function addToCart(name, price) {
+    const cart = document.getElementById("sideCart");
+    const cartItems = document.getElementById("cartItems");
+
+    // remove empty text
+    if (cartItems.querySelector(".empty")) {
+      cartItems.innerHTML = "";
+    }
+
+    // add product
+    const item = document.createElement("div");
+    item.classList.add("item");
+    item.innerHTML = `<strong>${name}</strong><br>${price}`;
+    cartItems.appendChild(item);
+
+    // show cart
+    cart.classList.add("active");
+  }
+
+  function closeCart() {
+    document.getElementById("sideCart").classList.remove("active");
+  }
+</script>
+
+
+
+
+
+
+</body>
+</html>
