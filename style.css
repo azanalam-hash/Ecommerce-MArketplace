@@ -396,5 +396,43 @@ grid-template-columns: repeat(4, 1fr);
   }
 
 }
+/* Reuse your popup-overlay and popup-box styles */
+#checkoutPopup .popup-box {
+  max-width: 500px;
+  padding: 20px;
+}
+
+#checkoutPopup h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#checkoutPopup form {
+  display: flex;
+  flex-direction: column;
+}
+
+#checkoutPopup label {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+#checkoutPopup input,
+#checkoutPopup textarea,
+#checkoutPopup select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+#checkoutPopup button {
+  margin-top: 20px;
+  padding: 12px;
+  background: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
 
 

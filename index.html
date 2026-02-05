@@ -346,7 +346,8 @@ function closePopup() {
   </div>
 
   <div class="side-cart-footer">
-    <button class="checkout-btn">Checkout</button>
+    <button class="checkout-btn" onclick="openCheckoutForm()">Checkout</button>
+
   </div>
 </div>
 <script>
@@ -378,6 +379,52 @@ function closePopup() {
     document.getElementById("sideCart").classList.remove("active");
   }
 </script>
+<!-- CHECKOUT FORM POPUP -->
+<div class="popup-overlay" id="checkoutPopup">
+  <div class="popup-box">
+    <span class="close-btn" onclick="closeCheckoutForm()">×</span>
+    <h2>Checkout</h2>
+    <form id="checkoutForm">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" placeholder="Your name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Your email" required>
+
+      <label for="address">Address</label>
+      <textarea id="address" placeholder="Your shipping address" required></textarea>
+
+      <label for="payment">Payment Method</label>
+      <select id="payment" required>
+        <option value="">Select</option>
+        <option value="card">Credit / Debit Card</option>
+        <option value="cash">Cash on Delivery</option>
+        <option value="paypal">PayPal</option>
+      </select>
+
+      <button type="submit" class="btn-primary">Place Order</button>
+    </form>
+  </div>
+</div>
+
+<script>
+function openCheckoutForm() {
+  document.getElementById("checkoutPopup").style.display = "flex";
+}
+
+function closeCheckoutForm() {
+  document.getElementById("checkoutPopup").style.display = "none";
+}
+
+// OPTIONAL: handle form submit
+document.getElementById("checkoutForm").addEventListener("submit", function(e){
+  e.preventDefault(); // prevent reload
+  alert("Order placed successfully!");
+  closeCheckoutForm();
+  closeCart(); // close side cart if open
+});
+</script>
+
 
 
 
