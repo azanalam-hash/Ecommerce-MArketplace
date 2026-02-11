@@ -15,7 +15,9 @@
 
 <!-- HEADER -->
 <header class="header">
+  
   <div class="header-left">
+    
     🔍
   </div>
 
@@ -25,14 +27,26 @@
 
   <div class="header-right">
     👤 
-    <div onclick="openCart()">👜</div>
+    <div class="cart-container" onclick="openCart()">🛒
+      <span id="cart-count">0</span>
+    </div>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+
   </div>
 </header>
 
 <!-- NAVBAR -->
 <nav class="navbar">
   <a href="#">HOME</a>
-  <a href="#">ALL PERFUMES</a>
+   <div class="dropdown">
+    <a href="#">ALL PERFUMES </a>
+    <div class="dropdown-content">
+      <a href="#">Men's Perfumes</a>
+      <a href="#">Women's Perfumes</a>
+      <a href="#">Unisex</a>
+      <a href="#">Limited Editions</a>
+    </div>
+  </div>
   <a href="#">CRAZY DEALS</a>
   <a href="#">NEW YEAR SPECIAL</a>
   <a href="#">ABOUT US</a>
@@ -52,18 +66,6 @@
     
   </div>
 </section>
-<script>
-  const slides = document.querySelectorAll(".slide");
-  let currentIndex = 0;
-
-  setInterval(() => {
-    slides[currentIndex].classList.remove("active");
-
-    currentIndex = (currentIndex + 1) % slides.length;
-
-    slides[currentIndex].classList.add("active");
-  }, 5000);
-</script>
 <section class="crazy-deals">
   <h2>CRAZY DEALS</h2>
 
@@ -319,21 +321,6 @@ Add to Cart
 
   </div>
 </div>
-<script>
-function openPopup(id) {
-  document.getElementById("popupOverlay").style.display = "flex";
-
-  document.querySelectorAll(".popup-content").forEach(popup => {
-    popup.style.display = "none";
-  });
-
-  document.getElementById(id).style.display = "block";
-}
-
-function closePopup() {
-  document.getElementById("popupOverlay").style.display = "none";
-}
-</script>
 <!-- SIDE CART -->
 <div class="side-cart" id="sideCart">
   <div class="side-cart-header">
@@ -350,35 +337,7 @@ function closePopup() {
 
   </div>
 </div>
-<script>
-  function openCart() {
-    const cart = document.getElementById("sideCart");
-    cart.classList.add("active");
-  }
 
-  function addToCart(name, price) {
-    const cart = document.getElementById("sideCart");
-    const cartItems = document.getElementById("cartItems");
-
-    // remove empty text
-    if (cartItems.querySelector(".empty")) {
-      cartItems.innerHTML = "";
-    }
-
-    // add product
-    const item = document.createElement("div");
-    item.classList.add("item");
-    item.innerHTML = `<strong>${name}</strong><br>${price}`;
-    cartItems.appendChild(item);
-
-    // open cart
-    cart.classList.add("active");
-  }
-
-  function closeCart() {
-    document.getElementById("sideCart").classList.remove("active");
-  }
-</script>
 <!-- CHECKOUT FORM POPUP -->
 <div class="popup-overlay" id="checkoutPopup">
   <div class="popup-box">
@@ -406,24 +365,46 @@ function closePopup() {
     </form>
   </div>
 </div>
+<!-- Login Button -->
+<button id="openModal">Login / Signup</button>
 
-<script>
-function openCheckoutForm() {
-  document.getElementById("checkoutPopup").style.display = "flex";
-}
+<!-- Modal -->
+<div id="authModal" class="modal">
+  <div class="modal-content">
 
-function closeCheckoutForm() {
-  document.getElementById("checkoutPopup").style.display = "none";
-}
+    <span class="close-btn">&times;</span>
 
-// OPTIONAL: handle form submit
-document.getElementById("checkoutForm").addEventListener("submit", function(e){
-  e.preventDefault(); // prevent reload
-  alert("Order placed successfully!");
-  closeCheckoutForm();
-  closeCart(); // close side cart if open
-});
-</script>
+    <div class="form-container">
+
+      <!-- Login Form -->
+      <form id="loginForm" class="form active">
+        <h2>Login</h2>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+        <p>Don't have an account? 
+          <span id="showSignup">Sign up</span>
+        </p>
+      </form>
+
+      <!-- Signup Form -->
+      <form id="signupForm" class="form">
+        <h2>Sign Up</h2>
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <button type="submit">Create Account</button>
+        <p>Already have an account? 
+          <span id="showLogin">Login</span>
+        </p>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+
+<script src="script.js"></script>
 
 
 

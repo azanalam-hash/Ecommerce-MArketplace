@@ -46,6 +46,14 @@ function openCart() {
     item.classList.add("item");
     item.innerHTML = `<strong>${name}</strong><br>${price}`;
     cartItems.appendChild(item);
+    updateCartCount();
+
+    function updateCartCount() {
+  document.getElementById("cart-count").textContent = cartItems.querySelectorAll(".item").length;
+}
+
+
+
 
     // open cart
     cart.classList.add("active");
@@ -88,4 +96,47 @@ document.querySelectorAll('.dropdown > a').forEach(link => {
       dropdownContent.classList.toggle('active'); // toggle show
     }
   });
+});
+
+
+
+
+
+
+const modal = document.getElementById("authModal");
+const openBtn = document.getElementById("openModal");
+const closeBtn = document.querySelector(".close-btn");
+
+const loginForm = document.getElementById("loginForm");
+const signupForm = document.getElementById("signupForm");
+
+const showSignup = document.getElementById("showSignup");
+const showLogin = document.getElementById("showLogin");
+
+/* Open Modal */
+openBtn.addEventListener("click", () => {
+  modal.style.display = "flex";
+});
+
+/* Close Modal */
+closeBtn.addEventListener("click", () => {
+  modal.style.display = "none";
+});
+
+/* Close When Clicking Outside */
+window.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modal.style.display = "none";
+  }
+});
+
+/* Switch Forms */
+showSignup.addEventListener("click", () => {
+  loginForm.classList.remove("active");
+  signupForm.classList.add("active");
+});
+
+showLogin.addEventListener("click", () => {
+  signupForm.classList.remove("active");
+  loginForm.classList.add("active");
 });
